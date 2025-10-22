@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
-import { Zap, BadgePercent, Coins, Copy, CheckCircle } from "lucide-react";
+import { Zap, RefreshCw, CheckCircle, Copy } from "lucide-react";
 
 const Index = () => {
   const referralCode = "YUNFAN80780";
@@ -22,14 +22,9 @@ const Index = () => {
       description: "Get the best energy prices available",
     },
     {
-      icon: BadgePercent,
-      title: "Extra savings with referral code",
-      description: "Stack your savings with our exclusive offer",
-    },
-    {
-      icon: Coins,
-      title: "£25 to £150 free energy credit",
-      description: "Instant credit applied to your account",
+      icon: RefreshCw,
+      title: "Easy switching process",
+      description: "Fuse will contact your current supplier to handle the switch",
     },
   ];
 
@@ -65,33 +60,24 @@ const Index = () => {
               </span>{" "}
               free energy when you switch to Fuse Energy
             </h1>
-            <p className="mb-8 text-xl text-muted-foreground sm:text-2xl">
-              Use referral code:{" "}
-              <span className="font-semibold text-foreground">{referralCode}</span>
-            </p>
-          </div>
-
-          {/* Referral Code Box */}
-          <div className="mx-auto mb-10 max-w-md animate-scale-in">
-            <Card className="border-2 border-primary/20 bg-card/50 p-6 shadow-card backdrop-blur-sm">
-              <div className="mb-2 text-sm font-medium text-muted-foreground">
-                Your Referral Code
-              </div>
-              <div className="mb-4 flex items-center justify-center gap-3">
+            <div className="mb-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <p className="text-xl text-muted-foreground sm:text-2xl">
+                Use referral code:
+              </p>
+              <div className="flex items-center gap-2">
                 <code className="rounded-lg bg-gradient-primary px-6 py-3 text-2xl font-bold tracking-wider text-primary-foreground shadow-glow">
                   {referralCode}
                 </code>
+                <Button
+                  onClick={copyToClipboard}
+                  variant="outline"
+                  size="icon"
+                  className="transition-all hover:border-primary"
+                >
+                  <Copy className="h-4 w-4" />
+                </Button>
               </div>
-              <Button
-                onClick={copyToClipboard}
-                variant="outline"
-                size="lg"
-                className="w-full transition-all hover:border-primary"
-              >
-                <Copy className="mr-2 h-4 w-4" />
-                Copy Code
-              </Button>
-            </Card>
+            </div>
           </div>
 
           {/* CTA Button */}
@@ -117,7 +103,7 @@ const Index = () => {
           <h2 className="mb-12 text-center text-3xl font-bold sm:text-4xl">
             Why Choose Fuse Energy?
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
