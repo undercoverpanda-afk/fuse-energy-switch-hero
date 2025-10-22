@@ -155,14 +155,9 @@ const Index = () => {
               variant="hero"
               size="xl"
               onClick={() => window.open(fuseUrl, "_blank")}
-              className="mb-4"
             >
               Get Started Now
             </Button>
-            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
-              <CheckCircle className="h-4 w-4 text-accent" />
-              <span>Join thousands of satisfied customers</span>
-            </div>
           </div>
         </div>
       </section>
