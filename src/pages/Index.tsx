@@ -65,14 +65,14 @@ const Index = () => {
                 Use referral code:
               </p>
               <div className="flex items-center gap-2">
-                <code className="rounded-lg bg-gradient-primary px-6 py-3 text-2xl font-bold tracking-wider text-primary-foreground shadow-glow">
+                <code className="rounded-md border border-border bg-muted px-4 py-2 text-lg font-mono tracking-wide text-foreground">
                   {referralCode}
                 </code>
                 <Button
                   onClick={copyToClipboard}
-                  variant="outline"
+                  variant="ghost"
                   size="icon"
-                  className="transition-all hover:border-primary"
+                  className="h-8 w-8"
                 >
                   <Copy className="h-4 w-4" />
                 </Button>
